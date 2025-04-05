@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Engineer Portfolio</title>
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        section {
+            margin-bottom: 40px;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        /* Header styles */
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        .profile-container {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #3498db;
+        }
+        
+        .profile-text {
+            max-width: 600px;
+            text-align: left;
+        }
+        
+        nav {
+            background-color: #2c3e50;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            width: 100%;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 15px 0;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #3498db;
+        }
+        
+        /* Tech stack styles */
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .tech-item {
+            background-color: #e7f5ff;
+            color: #0366d6;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: transform 0.2s;
+        }
+        
+        .tech-item:hover {
+            transform: translateY(-3px);
+            background-color: #d0e8ff;
+        }
+        
+        /* Certifications styles */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .cert-card {
+            border: 1px solid #e1e4e8;
+            border-radius: 5px;
+            padding: 15px;
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cert-badge {
+            height: 120px;
+            width: auto;
+            max-width: 120px;
+            margin: 0 auto 15px auto;
+            object-fit: contain;
+        }
+        
+        .cert-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Experience styles */
+        .experience-item {
+            margin-bottom: 30px;
+            border-left: 3px solid #3498db;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .experience-date {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+        
+        /* Projects styles */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        
+        .project-card {
+            border: 1px solid #e1e4e8;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-content {
+            padding: 20px;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .project-tech span {
+            background-color: #f1f8ff;
+            color: #0366d6;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        
+        /* Video section */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Footer styles */
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #3498db;
+        }
+        
+        /* Contact section specific */
+        .contact-links a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-links a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .profile-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .projects-grid, .cert-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#tech-stack">Tech Stack</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#video">Video</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header id="about">
+            <div class="profile-container">
+                <img src="./self-photo.png" alt="Emir Afwan" class="profile-image">
+                <div class="profile-text">
+                    <h1>Emir Afwan</h1>
+                    <h3>Senior DevOps Engineer</h3>
+                    <p>Welcome to my portfolio! I'm a passionate DevOps Engineer with over 2 years of experience specializing in CI/CD pipelines, cloud infrastructure, and automation. I'm dedicated to streamlining development processes and bridging the gap between development and operations teams.</p>
+                    <p>Based in INDONESIA • <a href="mailto:emir.afwan@gmail.com">emir.afwan@gmail.com</a></p>
+                </div>
+            </div>
+        </header>
+
+        <section id="tech-stack">
+            <h2>Tech Stack</h2>
+            <div class="tech-stack">
+                <div class="tech-item">AWS</div>
+                <div class="tech-item">Azure</div>
+                <div class="tech-item">GCP</div>
+                <div class="tech-item">Docker</div>
+                <div class="tech-item">Kubernetes</div>
+                <div class="tech-item">Terraform</div>
+                <div class="tech-item">CloudFormation</div>
+                <div class="tech-item">Jenkins</div>
+                <div class="tech-item">GitHub Actions</div>
+                <div class="tech-item">Azure DevOps</div>
+                <div class="tech-item">CodePipeline</div>
+                <div class="tech-item">Cloud Deploy</div>
+                <div class="tech-item">Prometheus</div>
+                <div class="tech-item">Grafana</div>
+                <div class="tech-item">Python</div>
+                <div class="tech-item">Bash</div>
+                <div class="tech-item">Powershell</div>
+                <div class="tech-item">Windows</div>
+                <div class="tech-item">Linux</div>
+                <div class="tech-item">Nginx</div>
+                <div class="tech-item">ECS</div>
+                <div class="tech-item">Beanstalk</div>
+                <div class="tech-item">App Service</div>
+                <div class="tech-item">Cloud Run</div>
+                <div class="tech-item">Lambda</div>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Professional Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <img src="./AWS-Certified-DevOps-Engineer-Professional.png" alt="AWS DevOps Engineer Professional Badge" class="cert-badge">
+                    <div class="cert-content">
+                        <h3>AWS Certified DevOps Engineer - Professional</h3>
+                        <p>Amazon Web Services</p>
+                        <p class="experience-date">Issued: January 2024 • Expires: January 2027</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <img src="./AWS-Certified-Solutions-Architect-Professional.png" alt="AWS Certified Solutions Architect - Professional" class="cert-badge">
+                    <div class="cert-content">
+                        <h3>AWS Certified Solutions Architect - Professional</h3>
+                        <p>Amazon Web Services</p>
+                        <p class="experience-date">Issued: September 2023 • Expires: September 2026</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <img src="./Professional-Cloud-Architect-Certification.png" alt=" Google Cloud Professional Architect Badge" class="cert-badge">
+                    <div class="cert-content">
+                        <h3>Google Cloud Certified - Professional Cloud Architect</h3>
+                        <p>Google Cloud</p>
+                        <p class="experience-date">Issued: July 2024 • Expires: July 2026</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <img src="./AWS-Certified-Security-Specialty.png" alt="AWS Certified Security – Specialty Badge" class="cert-badge">
+                    <div class="cert-content">
+                        <h3>AWS Certified Security – Specialty</h3>
+                        <p>Amazon Web Services</p>
+                        <p class="experience-date">Issued: April 2024 • Expires: April 2027</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <img src="./Associate-Cloud-Engineer-Certification.png" alt="Associate Cloud Engineer Certification Badge" class="cert-badge">
+                    <div class="cert-content">
+                        <h3>AWS Certified Security – Specialty</h3>
+                        <p>Google Cloud</p>
+                        <p class="experience-date">Issued: June 2024 • Expires: June 2027</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <img src="./AWS-Certified-SysOps-Administrator-Associate.png" alt="AWS Certified SysOps Administrator – Associate Badge" class="cert-badge">
+                    <div class="cert-content">
+                        <h3>AWS Certified SysOps Administrator – Associate</h3>
+                        <p>Amazon Web Services</p>
+                        <p class="experience-date">Issued: March 2023 • Expires: January 2027</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <img src="./AWS-Certified-Solutions-Architect-Associate.png" alt="AWS Certified Solutions Architect – Associate Badge" class="cert-badge">
+                    <div class="cert-content">
+                        <h3>AWS Certified Solutions Architect – Associate</h3>
+                        <p>Amazon Web Services</p>
+                        <p class="experience-date">Issued: October 2022 • Expires: September 2026</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <img src="./AWS-Certified-Cloud-Practitioner.png" alt="AWS Certified Cloud Practitioner Badge" class="cert-badge">
+                    <div class="cert-content">
+                        <h3>AWS Certified Cloud Practitioner</h3>
+                        <p>Amazon Web Services</p>
+                        <p class="experience-date">Issued: September 2022 • Expires: Januart 2027</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <img src="./IELTS.png" alt="IELTS B2 Badge" class="cert-badge">
+                    <div class="cert-content">
+                        <h3>IELTS B2</h3>
+                        <p>IELTS OFFICIAL</p>
+                        <p class="experience-date">Issued: Auguest 2024 • Expires: August 2026</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Work Experience</h2>
+            
+            <div class="experience-item">
+                <h3>DevOps Engineer</h3>
+                <p class="company-name">Flexidev - Remote (Brisbane, Australia)</p>
+                <p class="experience-date">January 2022 - Present</p>
+                <ul>
+                    <li>Led the migration of on-premise infrastructure to a hybrid cloud architecture using AWS and Azure, reducing operational costs by 35%.</li>
+                    <li>Implemented GitOps practices with Azure DevOps and Github Actions for Containerized deployments, improving deployment frequency by 200%.</li>
+                    <li>Designed and implemented a comprehensive monitoring solution using Prometheus, Grafana and Native AWS reducing MTTR by 60%.</li>
+                    <li>Automated infrastructure provisioning with Terraform and CloudFormation, reducing setup time from days to hours.</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Technical Cloud Engineer</h3>
+                <p class="company-name">G-AsiaPacific - Hybrid (Indonesia-Malaysia)</p>
+                <p class="experience-date">May 2024 - January 2025</p>
+                <ul>
+                    <li>Strategic Client Alignment: Bridged HQ engineering with Indonesian clients, ensuring seamless project execution.</li>
+                    <li>Security & Cost Optimization: Implemented automated checks, resulting in a demonstrable 30% reduction.</li>
+                    <li>PCI DSS Hybrid AWS Deployment: Designed and deployed a secure, multi-account AWS infrastructure compliant with PCI DSS.</li>
+                    <li>SRE Principles & Reliability: Ensured high availability and performance through SRE implementation</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <h3>AWS Managed Service (MSP)</h3>
+                <p class="company-name">PT.Central Data Technology - Hybrid</p>
+                <p class="experience-date">August 2022 - May 2024</p>
+                <ul>
+                    <li>Automated tasks & managed resources for efficient, reliable performance with minimal manual intervention.</li>
+                    <li>Enhanced security posture by implemented robust security measures aligned with industry best practices.</li>
+                    <li>Reduced costs by 30% optimized cloud resource utilization & leveraged cost-effective models to significantly reduce cloud spending.</li>
+                    <li>100% Support Success Rate: Resolved 100s support cases flawlessly, exceeding customer expectations.</li>
+                    <li>Managed Apps on AWS: SAP, ERP, TrekCare, ArcGIS, and Banking core systems for various high-profile clients.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Project Experience</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Cloud Migration</h3>
+                        <p>Led a successful migration of mission-critical applications from on-premise data centers to AWS, implementing a robust architecture with autoscaling, high availability, and disaster recovery capabilities.</p>
+                        <div class="project-tech">
+                            <span>AWS</span>
+                            <span>Terraform</span>
+                            <span>Docker</span>
+                            <span>ECS</span>
+                            <span>RDS</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>CI/CD Pipeline Modernization</h3>
+                        <p>Redesigned legacy deployment processes into a modern CI/CD pipeline using Azure DevOps and Github Actions, reducing deployment time from hours to minutes and enabling multiple daily deployments.</p>
+                        <div class="project-tech">
+                            <span>Azure DevOps</span>
+                            <span>ECS</span>
+                            <span>App Services</span>
+                            <span>OIDC</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Infrastructure as Code Implementation</h3>
+                        <p>Developed a comprehensive IaC strategy using Terraform and CloudFormation, converting manual provisioning processes into version-controlled code, improving consistency and reducing human error.</p>
+                        <div class="project-tech">
+                            <span>Terraform</span>
+                            <span>CloudFormation</span>
+                            <span>AWS</span>
+                            <span>Azure</span>
+                            <span>Google Cloud</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Observability Platform</h3>
+                        <p>Built a comprehensive monitoring and observability platform using Prometheus, Grafana, and AWS Stack, providing real-time insights into system performance and enabling proactive issue resolution.</p>
+                        <div class="project-tech">
+                            <span>Prometheus</span>
+                            <span>Grafana</span>
+                            <span>CloudWatch</span>
+                            <span>LogStream</span>
+                            <span>LogInsight</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Lambda Automation</h3>
+                        <p>Built automation script with lambda integrated services. [VPN Active-Passive multi ISP] [Customized multiple RDS Uptime] [Multi region failover and failback]</p>
+                        <div class="project-tech">
+                            <span>Lambda</span>
+                            <span>Eventbridge</span>
+                            <span>CloudWatch</span>
+                            <span>VPN Site-2-Site</span>
+                            <span>RDS</span>
+                            <span>ECS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Cross CSP Backup with Rclone</h3>
+                        <p>Built Backup Automation with Lambda and ECS, backing up terrafbytes of Game content data from S3 into Digital Ocean Spaces </p>
+                        <div class="project-tech">
+                            <span>Rclone</span>
+                            <span>Lambda</span>
+                            <span>ECS</span>
+                            <span>Digital Ocean</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="video">
+            <h2>Featured Presentation</h2>
+            <p>Watch my presentation on "Implementing GitOps with ArgoCD" from the recent DevOps Conference:</p>
+            <div class="video-container">
+                <!-- Replace with your YouTube video ID -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/2pS66Vvwh2c?si=NrNqi05At63l598y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-links">
+            <h2>Contact Me</h2>
+            <p>I'm always open to discussing new projects, opportunities, or partnerships. Feel free to reach out!</p>
+            <p><strong>Email:</strong> <a href="mailto:emir.afwan@gmail.com">emir.afwan@gmail.com</a></p>
+            <p><strong>Location:</strong> Your City, Country</p>
+            <p><strong>Connect with me:</strong></p>
+            <p>
+              <i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/emirafwan/" target="_blank">linkedin.com/in/emirafwan</a><br>
+              <i class="fab fa-github"></i> <a href="https://github.com/emirafwan" target="_blank">github.com/emirafwan</a><br>
+              <i class="fab fa-twitter"></i> <a href="https://twitter.com/yourusername" target="_blank">credly.com/users/emirafwan</a>
+            </p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/emirafwan/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/emirafwan" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.credly.com/users/emirafwan" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Emir Afwan - DevOps Engineer</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Add active class to nav items on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav ul li a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
