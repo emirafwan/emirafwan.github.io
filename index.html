@@ -767,8 +767,8 @@
                     <span class="stat-label">Certifications</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">5</span>
-                    <span class="stat-label">Roles</span>
+                    <span class="stat-number">13</span>
+                    <span class="stat-label">Projects</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">3</span>
@@ -1078,15 +1078,17 @@
 
                 <div class="project-card">
                     <div class="project-content">
-                        <h3>Lambda Automation</h3>
-                        <p>Built automation script with lambda integrated services. [VPN Active-Passive multi ISP] [Customized multiple RDS Uptime] [Multi region failover and failback]</p>
+                        <h3>Lambda Automation Suite</h3>
+                        <p>Built a collection of serverless automation solutions: VPN Active-Passive failover across multi-ISP, automated RDS start/stop scheduling with tag-based targeting, EKS node group scaling, multi-region failover/failback, and daily alarm reporting with timezone-aware scheduling.</p>
                         <div class="project-tech">
                             <span>Lambda</span>
-                            <span>Eventbridge</span>
+                            <span>Python</span>
+                            <span>boto3</span>
+                            <span>EventBridge</span>
                             <span>CloudWatch</span>
                             <span>VPN Site-2-Site</span>
                             <span>RDS</span>
-                            <span>ECS</span>
+                            <span>EKS</span>
                         </div>
                     </div>
                 </div>
@@ -1094,12 +1096,112 @@
                 <div class="project-card">
                     <div class="project-content">
                         <h3>Cross CSP Backup with Rclone</h3>
-                        <p>Built Backup Automation with Lambda and ECS, backing up terrafbytes of Game content data from S3 into Digital Ocean Spaces </p>
+                        <p>Engineered a multi-tenant backup automation system using Lambda and ECS, syncing terabytes of game content data from S3 to DigitalOcean Spaces with concurrent task throttling (max 5 parallel), API rate limit handling, and detailed cost/performance benchmarking.</p>
                         <div class="project-tech">
                             <span>Rclone</span>
                             <span>Lambda</span>
                             <span>ECS</span>
-                            <span>Digital Ocean</span>
+                            <span>S3</span>
+                            <span>DigitalOcean</span>
+                            <span>Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>EKS Infrastructure with Terraform</h3>
+                        <p>Comprehensive modular Terraform project for provisioning production-grade EKS clusters on AWS, including VPC with public/private subnets, bastion hosts, IAM roles, and reusable modules with advanced patterns (count, for_each, dynamic blocks).</p>
+                        <div class="project-tech">
+                            <span>Terraform</span>
+                            <span>AWS EKS</span>
+                            <span>VPC</span>
+                            <span>IAM</span>
+                            <span>EC2</span>
+                            <span>Kubernetes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Azure DevOps Multi-Stage Pipelines</h3>
+                        <p>Designed enterprise CI/CD pipelines with Azure DevOps for containerized applications, featuring multi-stage deployments (dev, test, staging, demo, prod), Docker builds with ACR, health check automation, and zero-downtime slot swaps.</p>
+                        <div class="project-tech">
+                            <span>Azure DevOps</span>
+                            <span>Docker</span>
+                            <span>ACR</span>
+                            <span>Azure Web Apps</span>
+                            <span>Bash</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>n8n Workflow Automation with Local LLM</h3>
+                        <p>Deployed a self-hosted workflow automation platform using Docker Compose, integrating n8n with PostgreSQL and a GPU-accelerated Llama inference server for AI-powered automation workflows.</p>
+                        <div class="project-tech">
+                            <span>Docker Compose</span>
+                            <span>n8n</span>
+                            <span>PostgreSQL</span>
+                            <span>Ollama</span>
+                            <span>NVIDIA CUDA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Chrome Extensions (LLaMA + Pronounce)</h3>
+                        <p>Built Chrome extensions using Manifest V3: a context-aware Q&A tool powered by local LLaMA model via Ollama, and a multilingual text-to-speech pronunciation tool supporting English and German.</p>
+                        <div class="project-tech">
+                            <span>JavaScript</span>
+                            <span>Chrome Manifest V3</span>
+                            <span>Ollama</span>
+                            <span>Web Speech API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Real-time Audio Transcriber</h3>
+                        <p>Developed a real-time audio transcription system using OpenAI Whisper with CUDA GPU acceleration, processing live audio streams with optimized performance through PyTorch and GPU memory management.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>OpenAI Whisper</span>
+                            <span>PyTorch</span>
+                            <span>CUDA</span>
+                            <span>pyaudio</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>WAF Rate Limit Testing Tool</h3>
+                        <p>Built a multi-threaded load testing tool for AWS WAF rate limiting validation, featuring concurrent request generation, response code tracking and analysis, and configurable test parameters for security testing.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>AWS WAF</span>
+                            <span>Threading</span>
+                            <span>concurrent.futures</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>ECS Containerized Deployment Pipeline</h3>
+                        <p>End-to-end containerized deployment setup with FastAPI in Docker, AWS CodeBuild CI/CD integration, ECR image management, and Terraform-provisioned infrastructure (VPC, subnets, NAT, IGW).</p>
+                        <div class="project-tech">
+                            <span>FastAPI</span>
+                            <span>Docker</span>
+                            <span>ECS</span>
+                            <span>CodeBuild</span>
+                            <span>ECR</span>
+                            <span>Terraform</span>
                         </div>
                     </div>
                 </div>
@@ -1107,10 +1209,12 @@
                 <div class="project-card">
                     <div class="project-content">
                         <h3>Email Migration</h3>
-                        <p>Email migration from google workspace into microsoft or microsot into google workspace </p>
+                        <p>Managed email migrations between Google Workspace and Microsoft 365, including service account setup, API configuration, IMAP batch migration, and step-by-step runbook documentation.</p>
                         <div class="project-tech">
                             <span>IMAP</span>
                             <span>Batch Migration</span>
+                            <span>Google Workspace</span>
+                            <span>Microsoft 365</span>
                         </div>
                     </div>
                 </div>
